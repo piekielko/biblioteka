@@ -1,15 +1,16 @@
 package pl.altkom.magazyn.dao;
 
 import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-
 import pl.altkom.magazyn.model.Towar;
 
 @Repository
 public class MagazynDaoDerby implements MagazynDao {
 
-	
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
 	
 	
 	@Override
