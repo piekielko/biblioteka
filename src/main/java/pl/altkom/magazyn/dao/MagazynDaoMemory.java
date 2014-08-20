@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import pl.altkom.magazyn.model.Towar;
 
-@Repository
 public class MagazynDaoMemory implements MagazynDao {
 
 	private List<Towar> dane;

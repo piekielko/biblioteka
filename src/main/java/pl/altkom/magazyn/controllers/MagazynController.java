@@ -29,9 +29,10 @@ public class MagazynController {
 			if (request.getParameter("action").equals("delete")) {
 				md.removeTowar(Integer.parseInt(request.getParameter("id")));
 			}
-			if (request.getParameter("action").equals("trip")) {
+			if (request.getParameter("action").equals("update")) {
 				zmiana = true;
 				id = Integer.parseInt(request.getParameter("id"));
+				model.addAttribute("towar", md.getTowar(id));
 			}
 		}
 		
