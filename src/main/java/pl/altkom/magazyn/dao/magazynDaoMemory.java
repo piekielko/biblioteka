@@ -14,7 +14,7 @@ public class magazynDaoMemory implements magazynDao {
 	}
 
 	@Override
-	public void addTowar(Towar t) {
+	public synchronized void addTowar(Towar t) {
 		// TODO Auto-generated method stub
 		if (dane.size() != 0) {
 			t.setId(dane.size());
@@ -25,25 +25,25 @@ public class magazynDaoMemory implements magazynDao {
 	}
 
 	@Override
-	public void updateTowar(Towar t) {
+	public synchronized void updateTowar(Towar t) {
 		// TODO Auto-generated method stub
 		dane.set((int)t.getId(), t);
 	}
 
 	@Override
-	public Towar getTowar(long id) {
+	public synchronized Towar getTowar(long id) {
 		// TODO Auto-generated method stub
 		return dane.get((int)id);
 	}
 
 	@Override
-	public void removeTowar(long id) {
+	public synchronized void removeTowar(long id) {
 		// TODO Auto-generated method stub
 		dane.remove((int)id);
 	}
 
 	@Override
-	public List<Towar> getAllSortedTowar(int atrybut, String s) {
+	public synchronized List<Towar> getAllSortedTowar(int atrybut, String s) {
 		// TODO Auto-generated method stub
 		return dane;
 	}
