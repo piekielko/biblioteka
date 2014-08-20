@@ -1,0 +1,42 @@
+https://www.eclipse.org/datatools/project_connectivity/connectivity_doc/Connect%20to%20Derby%20using%20DTP%20M2.htm
+
+http://wiki.eclipse.org/Scout/Tutorial/3.8/Database_Development_Perspective
+
+
+CREATE TABLE towary (
+  id          INT     NOT NULL,
+  nazwa        VARCHAR(255),
+  opis    	VARCHAR(255),
+  cena	     DECIMAL(10, 2),
+  ilosc        INT,
+  kategoria   VARCHAR(255)
+);
+
+
+insert into towary values (0, 'Sandaly', 'Ladne sandaly', 330.1,10,'Obuwie');
+
+CREATE TABLE towary (
+  id          INT     NOT NULL  PRIMARY KEY,
+  nazwa        VARCHAR(255),
+  opis    	VARCHAR(255),
+  cena	     DECIMAL(10, 2),
+  ilosc        INT,
+  kategoria   VARCHAR(255)
+);
+
+CREATE TABLE towary (
+  id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 0, INCREMENT BY 1),
+  nazwa        VARCHAR(255),
+  opis    	VARCHAR(255),
+  cena	     DECIMAL(10, 2),
+  ilosc        INT,
+  kategoria   VARCHAR(255)
+);
+
+id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)
+
+http://www.binarytides.com/create-autoincrement-columnfield-in-apache-derby/
+
+select id FROM towary order by id desc FETCH FIRST ROW ONLY;
+
+http://www.tutorialspoint.com/spring/spring_jdbc_example.htm

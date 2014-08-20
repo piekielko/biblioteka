@@ -1,9 +1,13 @@
 package pl.altkom.magazyn.dao;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
 import pl.altkom.magazyn.model.Towar;
 
 @Repository
@@ -11,11 +15,23 @@ public class MagazynDaoDerby implements MagazynDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
-	
+
 	@Override
 	public void addTowar(Towar t) {
 		// TODO Auto-generated method stub
+
+		try {
+			String sql = "INSERT INTO towary(nazwa,opis,cena,ilosc,kategoria) values(?,?,?,?,?)";
+			// String sql1 =
+			// "select id FROM towary order by id desc FETCH FIRST ROW ONLY;";
+
+			// jdbcTemplate.execute(sql1);
+			jdbcTemplate.update(sql, new Object[] { t.getNazwa(), t.getOpis(),
+					t.getCena(), t.getIlosc(), t.getKategoria() });
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
 
 	}
 
@@ -39,8 +55,9 @@ public class MagazynDaoDerby implements MagazynDao {
 
 	@Override
 	public List<Towar> getAllSortedTowar(int atrybut, String s) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select * FROM towary";
+		List<Towar> towary = jdbcTemplate.query(sql, new TowarMapper());
+		return towary;
 	}
 
 }
