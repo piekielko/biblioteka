@@ -49,8 +49,8 @@ public class MagazynDaoDerby implements MagazynDao {
 
 	@Override
 	public void removeTowar(long id) {
-		// TODO Auto-generated method stub
-
+	      String SQL = "delete from towary where id = ?";
+	      jdbcTemplate.update(SQL, id);
 	}
 
 	@Override

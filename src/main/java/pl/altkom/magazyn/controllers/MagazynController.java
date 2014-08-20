@@ -36,7 +36,7 @@ public class MagazynController {
 			}
 		}
 		
-		md.addTowar(new Towar(0,"Buty","Letnie",200.0,30,"Obuwie"));
+		//md.addTowar(new Towar(0,"Buty","Letnie",200.0,30,"Obuwie"));
 		model.addAttribute("magazyn", md.getAllSortedTowar(0, ""));
 		
 		return "magazyn";

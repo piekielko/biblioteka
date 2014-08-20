@@ -40,3 +40,5 @@ http://www.binarytides.com/create-autoincrement-columnfield-in-apache-derby/
 select id FROM towary order by id desc FETCH FIRST ROW ONLY;
 
 http://www.tutorialspoint.com/spring/spring_jdbc_example.htm
+
+http://squirrel-sql.sourceforge.net/
