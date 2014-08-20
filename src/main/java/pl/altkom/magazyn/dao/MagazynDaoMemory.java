@@ -19,8 +19,10 @@ public class MagazynDaoMemory implements MagazynDao {
 	@Override
 	public synchronized void addTowar(Towar t) {
 		// TODO Auto-generated method stub
+		Towar tmp = null;
 		if (dane.size() != 0) {
-			t.setId(dane.size());
+			tmp = dane.get(dane.size()-1);
+			t.setId(tmp.getId()+1);
 			dane.add(t);
 		} else {
 			dane.add(t);
