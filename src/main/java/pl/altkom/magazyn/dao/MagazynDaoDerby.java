@@ -37,20 +37,24 @@ public class MagazynDaoDerby implements MagazynDao {
 
 	@Override
 	public void updateTowar(Towar t) {
-		// TODO Auto-generated method stub
-
+		String SQL = "update towary set nazwa = ?, opis = ?, cena = ?, ilosc = ?, kategoria = ? where id = ?";
+		jdbcTemplate.update(SQL, t.getNazwa(), t.getOpis(), t.getCena(),
+				t.getIlosc(), t.getKategoria(), t.getId());
+		return;
 	}
 
 	@Override
 	public Towar getTowar(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		String SQL = "select * from towary where id = ?";
+		Towar towar = jdbcTemplate.queryForObject(SQL, new Object[] { id },
+				new TowarMapper());
+		return towar;
 	}
 
 	@Override
 	public void removeTowar(long id) {
-	      String SQL = "delete from towary where id = ?";
-	      jdbcTemplate.update(SQL, id);
+		String SQL = "delete from towary where id = ?";
+		jdbcTemplate.update(SQL, id);
 	}
 
 	@Override

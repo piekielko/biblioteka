@@ -34,7 +34,7 @@ CREATE TABLE towary (
 );
 
 id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)
-
+update towary set nazwa = 'Mini', opis = 'ten', cena = 10.9, ilosc = 3, kategoria = 'nowa' where id = 43;
 http://www.binarytides.com/create-autoincrement-columnfield-in-apache-derby/
 
 select id FROM towary order by id desc FETCH FIRST ROW ONLY;

@@ -7,9 +7,24 @@
 </head>
 <body>
 
+	<form:form modelAttribute="towar">
+		Nazwa: <form:input path="nazwa" />
+		<br>
+		Opis: <form:input path="opis" />
+		<br>
+				Cena: <form:input path="cena" />
+		<br>
+				Ilosc: <form:input path="ilosc" />
+		<br>
+				Kategoria: <form:input path="kategoria" />
+		<br>
+		<input type="submit" value="Dodaj" />
+
+	</form:form>
+
 	<table>
 		<tr>
-			<td>Lp</td>
+			<td>Id</td>
 			<td>Nazwa</td>
 			<td>Opis</td>
 			<td>Cena</td>
@@ -27,7 +42,8 @@
 				<td><c:out value="${towar.ilosc}" /></td>
 				<td><c:out value="${towar.kategoria}" /></td>
 				<td><a href="magazyn?id=${towar.id}&action=delete">Usu&#324;</a></td>
-				<td><a href="magazyn?id=${towar.id}&action=update">Zmie&#324;</a></td>
+				<td><a href="magazynzmien?id=${towar.id}&action=update">Zmie&#324;</a>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>
