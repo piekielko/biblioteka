@@ -64,7 +64,8 @@ public class MagazynController {
 	public String magazynDodaj(@ModelAttribute Towar towar, Model model) {
 		md.updateTowar(towar);
 		model.addAttribute(new Towar());
-		return "magazyn";
+                model.addAttribute("magazyn", md.getAllSortedTowar(0, ""));
+		return "home";
 	}
 	
 }
