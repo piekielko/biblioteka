@@ -15,7 +15,13 @@ public class MagazynDaoDerby implements MagazynDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	
+	private int sort = 0;
 
+	public void setSort(int sort) {
+		this.sort = sort;
+	}
+	
 	@Override
 	public void addTowar(Towar t) {
 		// TODO Auto-generated method stub

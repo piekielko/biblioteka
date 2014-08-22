@@ -25,6 +25,10 @@ public class MagazynController {
 		boolean zmiana = false;
 		int id = 0;
 
+		if ((request.getParameter("sort") != null)) {
+			md.setSort(Integer.parseInt(request.getParameter("sort")));
+		}
+		
 		if ((request.getParameter("id") != null)
 				&& (request.getParameter("action") != null)) {
 			if (request.getParameter("action").equals("delete")) {
@@ -52,7 +56,7 @@ public class MagazynController {
 		model.addAttribute(new Towar());
 		return "magazyn";
 	}
-	
+
 	@RequestMapping(value = "/magazynzmien", method = RequestMethod.GET)
 	public String magazynDodaj(HttpServletRequest request, Model model) {
 		int id = Integer.parseInt(request.getParameter("id"));
@@ -64,8 +68,9 @@ public class MagazynController {
 	public String magazynDodaj(@ModelAttribute Towar towar, Model model) {
 		md.updateTowar(towar);
 		model.addAttribute(new Towar());
-                model.addAttribute("magazyn", md.getAllSortedTowar(0, ""));
+		model.addAttribute("magazyn", md.getAllSortedTowar(0, ""));
+		model.addAttribute(new Towar());
 		return "home";
 	}
-	
+
 }

@@ -10,7 +10,9 @@ import pl.altkom.magazyn.model.Towar;
 public class MagazynDaoMemory implements MagazynDao {
 
 	private List<Towar> dane;
-		
+	
+	
+	
 	public MagazynDaoMemory() {
 		dane = new ArrayList();
 	}
@@ -50,6 +52,12 @@ public class MagazynDaoMemory implements MagazynDao {
 	public synchronized List<Towar> getAllSortedTowar(int atrybut, String s) {
 		// TODO Auto-generated method stub
 		return dane;
+	}
+
+	@Override
+	public void setSort(int sort) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

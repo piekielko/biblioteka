@@ -24,12 +24,12 @@
 
 	<table>
 		<tr>
-			<td>Id</td>
-			<td>Nazwa</td>
-			<td>Opis</td>
-			<td>Cena</td>
-			<td>Ilosc</td>
-			<td>Kategoria</td>
+			<td><a href="magazyn?sort=0">Id</a></td>
+			<td><a href="magazyn?sort=1">Nazwa</a></td>
+			<td><a href="magazyn?sort=2">Opis</a></td>
+			<td><a href="magazyn?sort=3">Cena</a></td>
+			<td><a href="magazyn?sort=4">Ilosc</a></td>
+			<td><a href="magazyn?sort=5">Kategoria</a></td>
 			<td>Usu&#324;</td>
 			<td>Zmie&#324;</td>
 		</tr>

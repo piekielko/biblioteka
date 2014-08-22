@@ -18,7 +18,7 @@
 		<br>
 				Kategoria: <form:input path="kategoria" />
 		<br>
-		<input type="submit" value="Dodaj" />
+		<input type="submit" value="Zmie&#324;" />
 		<form:hidden path="id"/>
 	</form:form>
 </body>
