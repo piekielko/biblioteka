@@ -1,6 +1,7 @@
 package pl.altkom.magazyn.dao;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -8,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import pl.altkom.magazyn.model.ComparatorByCena;
+import pl.altkom.magazyn.model.ComparatorByKat;
+import pl.altkom.magazyn.model.ComparatorByNazwa;
 import pl.altkom.magazyn.model.Towar;
 
 @Repository
@@ -67,6 +71,11 @@ public class MagazynDaoDerby implements MagazynDao {
 	public List<Towar> getAllSortedTowar(int atrybut, String s) {
 		String sql = "select * FROM towary";
 		List<Towar> towary = jdbcTemplate.query(sql, new TowarMapper());
+		
+		if (sort == 1) Collections.sort(towary, new ComparatorByNazwa());
+		if (sort == 3) Collections.sort(towary, new ComparatorByCena());
+		if (sort == 5) Collections.sort(towary, new ComparatorByKat());
+		
 		return towary;
 	}
 

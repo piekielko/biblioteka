@@ -70,7 +70,7 @@ public class MagazynController {
 		model.addAttribute(new Towar());
 		model.addAttribute("magazyn", md.getAllSortedTowar(0, ""));
 		model.addAttribute(new Towar());
-		return "home";
+		return "magazyn";
 	}
 
 }

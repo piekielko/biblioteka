@@ -18,7 +18,9 @@
 		<br>
 				Kategoria: <form:input path="kategoria" />
 		<br>
-		<input type="submit" value="Dodaj" />
+		<input type="submit" value="Dodaj" formaction="magazyn" formmethod="post" />
+		
+
 
 	</form:form>
 
