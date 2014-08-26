@@ -19,13 +19,13 @@ public class MagazynDaoDerby implements MagazynDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
+
 	private int sort = 0;
 
 	public void setSort(int sort) {
 		this.sort = sort;
 	}
-	
+
 	@Override
 	public void addTowar(Towar t) {
 		// TODO Auto-generated method stub
@@ -71,11 +71,30 @@ public class MagazynDaoDerby implements MagazynDao {
 	public List<Towar> getAllSortedTowar(int atrybut, String s) {
 		String sql = "select * FROM towary";
 		List<Towar> towary = jdbcTemplate.query(sql, new TowarMapper());
-		
-		if (sort == 1) Collections.sort(towary, new ComparatorByNazwa());
-		if (sort == 3) Collections.sort(towary, new ComparatorByCena());
-		if (sort == 5) Collections.sort(towary, new ComparatorByKat());
-		
+		List<Towar> tmp = new ArrayList();
+		if (atrybut != 0) {
+			if (atrybut == 1)
+				for (int i = 0; i < towary.size(); i++)
+					if (towary.get(i).getNazwa().matches(s))
+						tmp.add(towary.get(i));
+			if (atrybut == 2)
+				for (int i = 0; i < towary.size(); i++)
+					if (towary.get(i).getOpis().matches(s))
+						tmp.add(towary.get(i));
+			if (atrybut == 5)
+				for (int i = 0; i < towary.size(); i++)
+					if (towary.get(i).getKategoria().matches(s))
+						tmp.add(towary.get(i));
+			towary = tmp;
+		}
+
+		if (sort == 1)
+			Collections.sort(towary, new ComparatorByNazwa());
+		if (sort == 3)
+			Collections.sort(towary, new ComparatorByCena());
+		if (sort == 5)
+			Collections.sort(towary, new ComparatorByKat());
+
 		return towary;
 	}
 

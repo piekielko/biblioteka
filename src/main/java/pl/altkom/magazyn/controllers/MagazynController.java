@@ -24,11 +24,19 @@ public class MagazynController {
 	public String magazyn(Locale locale, Model model, HttpServletRequest request) {
 		boolean zmiana = false;
 		int id = 0;
-
+		int atrybut = 0;
+		String wyrazenie = "";
+		
+		if (request.getParameter("filter") != null) {
+			System.out.println(request.getParameter("wyrazenie"));
+			atrybut = Integer.parseInt(request.getParameter("kategoria"));
+			wyrazenie = request.getParameter("wyrazenie");
+		}
+		
 		if ((request.getParameter("sort") != null)) {
 			md.setSort(Integer.parseInt(request.getParameter("sort")));
 		}
-		
+
 		if ((request.getParameter("id") != null)
 				&& (request.getParameter("action") != null)) {
 			if (request.getParameter("action").equals("delete")) {
@@ -42,7 +50,7 @@ public class MagazynController {
 		}
 
 		// md.addTowar(new Towar(0,"Buty","Letnie",200.0,30,"Obuwie"));
-		model.addAttribute("magazyn", md.getAllSortedTowar(0, ""));
+		model.addAttribute("magazyn", md.getAllSortedTowar(atrybut, wyrazenie));
 		model.addAttribute(new Towar());
 		return "magazyn";
 	}

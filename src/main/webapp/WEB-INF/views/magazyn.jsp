@@ -18,11 +18,23 @@
 		<br>
 				Kategoria: <form:input path="kategoria" />
 		<br>
-		<input type="submit" value="Dodaj" formaction="magazyn" formmethod="post" />
-		
+		<input type="submit" value="Dodaj" formaction="magazyn"
+			formmethod="post" />
+
 
 
 	</form:form>
+
+	<form action="magazyn" method="get">
+		<input type="text" value=".*" name="wyrazenie" ><br> 
+		<select name="kategoria">
+			<option value="1" >Nazwa</option>
+			<option value="2" >Opis</option>
+			<option value="5" >Kategoria</option>
+		</select><br>
+		<input type="submit" name="filter" value="Filtruj" >
+		
+	</form>
 
 	<table>
 		<tr>
