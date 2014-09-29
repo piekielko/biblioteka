@@ -14,7 +14,7 @@ import pl.altkom.magazyn.model.ComparatorByKat;
 import pl.altkom.magazyn.model.ComparatorByNazwa;
 import pl.altkom.magazyn.model.Towar;
 
-@Repository
+
 public class MagazynDaoDerby implements MagazynDao {
 
 	@Autowired
