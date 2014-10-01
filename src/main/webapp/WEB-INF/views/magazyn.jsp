@@ -5,34 +5,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style>
-   table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    background-color: #6495ED
+    #okienka{
+        
     }
     
-    table {
-        width: 100%
+    #filtr{
+        
     }
     
-   
+    #tabela,tr, td{
+        border:1px solid black;
+        width:100%;
+        
+    }
     
-
     
-     
-
+        
+        
     
-     
-   
     
-   
 </style>
 </head>
 <body>
     
     
     
-
+    <div id="okienka">
 	<form:form modelAttribute="towar">
             
 		Nazwa: <form:input path="nazwa" />
@@ -51,7 +49,8 @@
 
 
 	</form:form>
-
+    </div>
+    <div id="filtr">
 	<form action="magazyn" method="get">
 		<input type="text" value=".*" name="wyrazenie" ><br> 
 		<select name="kategoria">
@@ -62,10 +61,14 @@
 		<input type="submit" name="filter" value="Filtruj" >
 		
 	</form>
-
+    </div>
+    
+    
+    <div id="tabela">
                 <table>
-                      <tabele id="1">
+                      
                       <tr>
+                      
                         
 			<td><a href="magazyn?sort=0">Id</a></td>
 			<td><a href="magazyn?sort=1">Nazwa</a></td>
@@ -75,14 +78,16 @@
 			<td><a href="magazyn?sort=5">Kategoria</a></td>
 			<td>Usu&#324;</td>
 			<td>Zmie&#324;</td>
+                      </tr>
                         
-		      </tr>
-                      </tabele>
-                
+		      
+    
+    
+              
 		<c:forEach var="towar" items="${magazyn}">
-                    <table id="2">
+                    
 			<tr>
-                                <td id="2">
+                                
 				<td><c:out value="${towar.id+1}" /></td>
 				<td><c:out value="${towar.nazwa}" /></td>
 				<td><c:out value="${towar.opis}" /></td>
@@ -92,10 +97,11 @@
 				<td><a href="magazyn?id=${towar.id}&action=delete">Usu&#324;</a></td>
 				<td><a href="magazynzmien?id=${towar.id}&action=update">Zmie&#324;</a>
 				</td>
-                                </td>
+                                
 			</tr>
-                    </table>
+                    
 		</c:forEach>
 	</table>
+    </div>
 </body>
 </html>
