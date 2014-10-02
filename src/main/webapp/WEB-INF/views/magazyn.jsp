@@ -3,27 +3,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="${pageContext.request.contextPath}/resources/style.magazyn.css" rel="stylesheet" type="text/css"/>
 <title>Insert title here</title>
 <style>
-    #okienka{
-        
-    }
-    
-    #filtr{
-        
-    }
-    
-    #tabela,tr, td{
-        border:1px solid black;
-        width:100%;
-        
-    }
-    
-    
-        
-        
-    
-    
+ 
 </style>
 </head>
 <body>
@@ -32,17 +15,21 @@
     
     <div id="okienka">
 	<form:form modelAttribute="towar">
-            
-		Nazwa: <form:input path="nazwa" />
+            <div id="okienka-tr">
+            <tr>
+		<form:input path="nazwa" name="nazwa" placeholder="Nazwa" />
 		<br>
-		Opis: <form:input path="opis" />
+		<form:input path="opis" name="opis" placeholder="Opis" />
 		<br>
-				Cena: <form:input path="cena" />
+		<form:input path="cena" name="cena" placeholder="Cena"/>
 		<br>
-				Ilosc: <form:input path="ilosc" />
+		<form:input path="ilosc" name="ilosc" placeholder="Ilosc" />
 		<br>
-				Kategoria: <form:input path="kategoria" />
+		<form:input path="kategoria" name="kategoria" placeholder="Kategoria" />
 		<br>
+             </tr>
+             
+            </div>
 		<input type="submit" value="Dodaj" formaction="magazyn"
 			formmethod="post" />
 
@@ -65,25 +52,28 @@
     
     
     <div id="tabela">
-                <table>
+                <table style="width: 100%">
                       
                       <tr>
                       
                         
-			<td><a href="magazyn?sort=0">Id</a></td>
-			<td><a href="magazyn?sort=1">Nazwa</a></td>
-			<td><a href="magazyn?sort=2">Opis</a></td>
-			<td><a href="magazyn?sort=3">Cena</a></td>
-			<td><a href="magazyn?sort=4">Ilosc</a></td>
-			<td><a href="magazyn?sort=5">Kategoria</a></td>
-			<td>Usu&#324;</td>
-			<td>Zmie&#324;</td>
+			<th><a href="magazyn?sort=0">Id</a></th>
+			<th><a href="magazyn?sort=1">Nazwa</a></th>
+			<th><a href="magazyn?sort=2">Opis</a></th>
+			<th><a href="magazyn?sort=3">Cena</a></th>
+			<th><a href="magazyn?sort=4">Ilosc</a></th>
+			<th><a href="magazyn?sort=5">Kategoria</a></th>
+			<th>Usu&#324;</th>
+			<th>Zmie&#324;</th>
                       </tr>
+                
+    </div>
                         
 		      
     
     
-              
+    <div id="tabela1">
+       
 		<c:forEach var="towar" items="${magazyn}">
                     
 			<tr>

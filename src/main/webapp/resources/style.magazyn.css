@@ -1,0 +1,70 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2014-10-02, 10:31:43
+    Author     : kursant1
+*/
+
+
+    #okienka{
+        
+    }
+    
+    #okienka-tr{
+            padding:10px;
+            margin:100px;
+            width:200px; 
+            height:100px;
+        
+    }
+    
+    #filtr{
+        
+    }
+    
+    #tabela {
+       color: black;
+        font-family:verdana;
+        font-size:80%;
+          }
+    
+    #tabela tr{
+         background-color: #808080;
+         color: black;
+    }
+    #tabela th{
+        color: black;
+        padding: 10px;
+        border:1px solid black;
+        text-align: center;
+        line-height:30px;
+        /* unvisited link */
+        a:link {
+        color: #FF0000;
+        }
+
+        /* visited link */
+        a:visited {
+        color: #00FF00;
+        }
+
+        /* mouse over link */
+        a:hover {
+        color: #FF00FF;
+        }
+        
+    }
+    
+    #tr, td{
+        padding: 10px;
+        border:1px solid black;
+        text-align: center;
+        
+    }
+    
+    #tabela1{
+        background-color: #808080; 
+    }
