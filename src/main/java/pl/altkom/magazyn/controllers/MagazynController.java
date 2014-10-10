@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import pl.altkom.magazyn.dao.MagazynDao;
-import pl.altkom.magazyn.model.Towar;
+import pl.altkom.magazyn.model.Ksiazki;
 
 @Controller
 public class MagazynController {
@@ -51,17 +51,17 @@ public class MagazynController {
 
 		// md.addTowar(new Towar(0,"Buty","Letnie",200.0,30,"Obuwie"));
 		model.addAttribute("magazyn", md.getAllSortedTowar(atrybut, wyrazenie));
-		model.addAttribute(new Towar());
+		model.addAttribute(new Ksiazki());
 		return "magazyn";
 	}
 
 	@RequestMapping(value = "/magazyn", method = RequestMethod.POST)
-	public String magazynDodaj(Locale locale, @ModelAttribute Towar towar,
+	public String magazynDodaj(Locale locale, @ModelAttribute Ksiazki towar,
 			Model model) {
 
 		md.addTowar(towar);
 		model.addAttribute("magazyn", md.getAllSortedTowar(0, ""));
-		model.addAttribute(new Towar());
+		model.addAttribute(new Ksiazki());
 		return "magazyn";
 	}
 
@@ -73,11 +73,11 @@ public class MagazynController {
 	}
 
 	@RequestMapping(value = "/magazynzmien", method = RequestMethod.POST)
-	public String magazynDodaj(@ModelAttribute Towar towar, Model model) {
+	public String magazynDodaj(@ModelAttribute Ksiazki towar, Model model) {
 		md.updateTowar(towar);
-		model.addAttribute(new Towar());
+		model.addAttribute(new Ksiazki());
 		model.addAttribute("magazyn", md.getAllSortedTowar(0, ""));
-		model.addAttribute(new Towar());
+		model.addAttribute(new Ksiazki());
 		return "magazyn";
 	}
 

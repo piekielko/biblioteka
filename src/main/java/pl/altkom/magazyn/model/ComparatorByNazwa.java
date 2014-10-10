@@ -2,12 +2,12 @@ package pl.altkom.magazyn.model;
 
 import java.util.Comparator;
 
-public class ComparatorByNazwa implements Comparator<Towar> {
+public class ComparatorByNazwa implements Comparator<Ksiazki> {
 
     @Override
-    public int compare(Towar o1, Towar o2) {
-        String naz1 = o1.getNazwa();
-        String naz2 = o2.getNazwa();
+    public int compare(Ksiazki o1, Ksiazki o2) {
+        String naz1 = o1.getTytul();
+        String naz2 = o2.getTytul();
         return naz1.compareToIgnoreCase(naz2);
     }
 

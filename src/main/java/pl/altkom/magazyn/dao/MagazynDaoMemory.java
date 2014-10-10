@@ -5,12 +5,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import pl.altkom.magazyn.model.Towar;
+import pl.altkom.magazyn.model.Ksiazki;
 
 
 public class MagazynDaoMemory implements MagazynDao {
 
-	private List<Towar> dane;
+	private List<Ksiazki> dane;
 	
 	
 	
@@ -19,9 +19,9 @@ public class MagazynDaoMemory implements MagazynDao {
 	}
 
 	@Override
-	public synchronized void addTowar(Towar t) {
+	public synchronized void addTowar(Ksiazki t) {
 		// TODO Auto-generated method stub
-		Towar tmp = null;
+		Ksiazki tmp = null;
 		if (dane.size() != 0) {
 			tmp = dane.get(dane.size()-1);
 			t.setId(tmp.getId()+1);
@@ -32,13 +32,13 @@ public class MagazynDaoMemory implements MagazynDao {
 	}
 
 	@Override
-	public synchronized void updateTowar(Towar t) {
+	public synchronized void updateTowar(Ksiazki t) {
 		// TODO Auto-generated method stub
 		dane.set((int)t.getId(), t);
 	}
 
 	@Override
-	public synchronized Towar getTowar(long id) {
+	public synchronized Ksiazki getTowar(long id) {
 		// TODO Auto-generated method stub
 		return dane.get((int)id);
 	}
@@ -50,7 +50,7 @@ public class MagazynDaoMemory implements MagazynDao {
 	}
 
 	@Override
-	public synchronized List<Towar> getAllSortedTowar(int atrybut, String s) {
+	public synchronized List<Ksiazki> getAllSortedTowar(int atrybut, String s) {
 		// TODO Auto-generated method stub
 		return dane;
 	}

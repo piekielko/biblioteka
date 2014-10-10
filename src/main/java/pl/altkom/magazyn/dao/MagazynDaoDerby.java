@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import pl.altkom.magazyn.model.ComparatorByCena;
+import pl.altkom.magazyn.model.ComparatorByAutorzy;
 import pl.altkom.magazyn.model.ComparatorByKat;
 import pl.altkom.magazyn.model.ComparatorByNazwa;
-import pl.altkom.magazyn.model.Towar;
+import pl.altkom.magazyn.model.Ksiazki;
 
 @Repository
 public class MagazynDaoDerby implements MagazynDao {
@@ -27,17 +27,17 @@ public class MagazynDaoDerby implements MagazynDao {
 	}
 
 	@Override
-	public void addTowar(Towar t) {
+	public void addTowar(Ksiazki t) {
 		// TODO Auto-generated method stub
 
 		try {
-			String sql = "INSERT INTO towary(nazwa,opis,cena,ilosc,kategoria) values(?,?,?,?,?)";
+			String sql = "INSERT INTO towary(tytul,opis,cena,ilosc,kategoria) values(?,?,?,?,?)";
 			// String sql1 =
 			// "select id FROM towary order by id desc FETCH FIRST ROW ONLY;";
 
 			// jdbcTemplate.execute(sql1);
-			jdbcTemplate.update(sql, new Object[] { t.getNazwa(), t.getOpis(),
-					t.getCena(), t.getIlosc(), t.getKategoria() });
+			jdbcTemplate.update(sql, new Object[] { t.getTytul(), t.getOpis(),
+					t.getAutorzy(), t.getIlosc(), t.getKategoria() });
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
@@ -46,18 +46,18 @@ public class MagazynDaoDerby implements MagazynDao {
 	}
 
 	@Override
-	public void updateTowar(Towar t) {
+	public void updateTowar(Ksiazki t) {
 		String SQL = "update towary set nazwa = ?, opis = ?, cena = ?, ilosc = ?, kategoria = ? where id = ?";
-		jdbcTemplate.update(SQL, t.getNazwa(), t.getOpis(), t.getCena(),
+		jdbcTemplate.update(SQL, t.getTytul(), t.getOpis(), t.getAutorzy(),
 				t.getIlosc(), t.getKategoria(), t.getId());
 		return;
 	}
 
 	@Override
-	public Towar getTowar(long id) {
+	public Ksiazki getTowar(long id) {
 		String SQL = "select * from towary where id = ?";
-		Towar towar = jdbcTemplate.queryForObject(SQL, new Object[] { id },
-				new TowarMapper());
+		Ksiazki towar = jdbcTemplate.queryForObject(SQL, new Object[] { id },
+				new KsiazkiMapper());
 		return towar;
 	}
 
@@ -68,14 +68,14 @@ public class MagazynDaoDerby implements MagazynDao {
 	}
 
 	@Override
-	public List<Towar> getAllSortedTowar(int atrybut, String s) {
+	public List<Ksiazki> getAllSortedTowar(int atrybut, String s) {
 		String sql = "select * FROM towary";
-		List<Towar> towary = jdbcTemplate.query(sql, new TowarMapper());
-		List<Towar> tmp = new ArrayList();
+		List<Ksiazki> towary = jdbcTemplate.query(sql, new KsiazkiMapper());
+		List<Ksiazki> tmp = new ArrayList();
 		if (atrybut != 0) {
 			if (atrybut == 1)
 				for (int i = 0; i < towary.size(); i++)
-					if (towary.get(i).getNazwa().matches(s))
+					if (towary.get(i).getTytul().matches(s))
 						tmp.add(towary.get(i));
 			if (atrybut == 2)
 				for (int i = 0; i < towary.size(); i++)
@@ -91,7 +91,7 @@ public class MagazynDaoDerby implements MagazynDao {
 		if (sort == 1)
 			Collections.sort(towary, new ComparatorByNazwa());
 		if (sort == 3)
-			Collections.sort(towary, new ComparatorByCena());
+			Collections.sort(towary, new ComparatorByAutorzy());
 		if (sort == 5)
 			Collections.sort(towary, new ComparatorByKat());
 
