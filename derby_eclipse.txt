@@ -3,7 +3,7 @@ https://www.eclipse.org/datatools/project_connectivity/connectivity_doc/Connect%
 http://wiki.eclipse.org/Scout/Tutorial/3.8/Database_Development_Perspective
 
 
-CREATE TABLE towary (
+CREATE TABLE ksiazki (
   id          INT     NOT NULL,
   nazwa        VARCHAR(255),
   opis    	VARCHAR(255),

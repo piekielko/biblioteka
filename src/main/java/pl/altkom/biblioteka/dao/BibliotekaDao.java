@@ -5,9 +5,9 @@ import pl.altkom.biblioteka.model.Ksiazka;
 
 public interface BibliotekaDao {
 
-	public void addKsiazka(Ksiazka t);
+	public void addKsiazka(Ksiazka k);
 
-	public void updateKsiazka(Ksiazka t);
+	public void updateKsiazka(Ksiazka k);
 
 	public Ksiazka getKsiazka(long id);
 

@@ -14,15 +14,19 @@
     
     
     <div id="okienka">
-	<form:form modelAttribute="towar">
+	<form:form modelAttribute="ksiazka">
             <div id="okienka-tr">
             <tr>
-		<form:input path="nazwa" name="nazwa" placeholder="Nazwa" />
+		<form:input path="tytul" name="tytul" placeholder="Tytul" />
 		<br>
 		<form:input path="opis" name="opis" placeholder="Opis" />
 		<br>
-		<form:input path="cena" name="cena" placeholder="Cena"/>
+                <form:input path="imieAutora" name="imieAutora" placeholder="ImieAutora" />
+                <br>
+		<form:input path="nazwiskoAutora" name="nazwiskoAutora" placeholder="NazwiskoAutora"/>
 		<br>
+                <form:input path="pochodzenieAutora" name="pochodzenieAutora" placeholder="PochodzenieAutora" />
+                <br>
 		<form:input path="ilosc" name="ilosc" placeholder="Ilosc" />
 		<br>
 		<form:input path="kategoria" name="kategoria" placeholder="Kategoria" />
@@ -30,7 +34,7 @@
              </tr>
              
             </div>
-		<input type="submit" value="Dodaj" formaction="magazyn"
+		<input type="submit" value="Dodaj" formaction="biblioteka"
 			formmethod="post" />
 
 
@@ -38,12 +42,12 @@
 	</form:form>
     </div>
     <div id="filtr">
-	<form action="magazyn" method="get">
+	<form action="biblioteka" method="get">
 		<input type="text" value=".*" name="wyrazenie" ><br> 
 		<select name="kategoria">
-			<option value="1" >Nazwa</option>
+			<option value="1" >Tytul</option>
 			<option value="2" >Opis</option>
-			<option value="5" >Kategoria</option>
+			<option value="7" >Kategoria</option>
 		</select><br>
 		<input type="submit" name="filter" value="Filtruj" >
 		
@@ -57,12 +61,14 @@
                       <tr>
                       
                         
-			<th><a href="magazyn?sort=0">Id</a></th>
-			<th><a href="magazyn?sort=1">Nazwa</a></th>
-			<th><a href="magazyn?sort=2">Opis</a></th>
-			<th><a href="magazyn?sort=3">Cena</a></th>
-			<th><a href="magazyn?sort=4">Ilosc</a></th>
-			<th><a href="magazyn?sort=5">Kategoria</a></th>
+			<th><a href="biblioteka?sort=0">Id</a></th>
+			<th><a href="biblioteka?sort=1">Tytul</a></th>
+			<th><a href="biblioteka?sort=2">Opis</a></th>
+			<th><a href="biblioteka?sort=3">imieAutora</a></th>
+                        <th><a href="biblioteka?sort=4">nazwiskoAutora</a></th>
+                        <th><a href="biblioteka?sort=5">pochodzenieAutora</a></th>
+			<th><a href="biblioteka?sort=6">Ilosc</a></th>
+			<th><a href="biblioteka?sort=7">Kategoria</a></th>
 			<th>Usu&#324;</th>
 			<th>Zmie&#324;</th>
                       </tr>
@@ -74,18 +80,20 @@
     
     <div id="tabela1">
        
-		<c:forEach var="towar" items="${magazyn}">
+		<c:forEach var="ksiazka" items="${biblioteka}">
                     
 			<tr>
                                 
-				<td><c:out value="${towar.id+1}" /></td>
-				<td><c:out value="${towar.nazwa}" /></td>
-				<td><c:out value="${towar.opis}" /></td>
-				<td><c:out value="${towar.cena}" /></td>
-				<td><c:out value="${towar.ilosc}" /></td>
-				<td><c:out value="${towar.kategoria}" /></td>
-				<td><a href="magazyn?id=${towar.id}&action=delete">Usu&#324;</a></td>
-				<td><a href="magazynzmien?id=${towar.id}&action=update">Zmie&#324;</a>
+				<td><c:out value="${ksiazka.id+1}" /></td>
+				<td><c:out value="${ksiazka.tytul}" /></td>
+				<td><c:out value="${ksiazka.opis}" /></td>
+				<td><c:out value="${ksiazka.imieAutora}" /></td>
+                                <td><c:out value="${ksiazka.nazwiskoAutora}" /></td>
+                                <td><c:out value="${ksiazka.pochodzenieAutora}" /></td>
+				<td><c:out value="${ksiazka.ilosc}" /></td>
+				<td><c:out value="${ksiazka.kategoria}" /></td>
+				<td><a href="magazyn?id=${ksiazka.id}&action=delete">Usu&#324;</a></td>
+				<td><a href="magazynzmien?id=${ksiazka.id}&action=update">Zmie&#324;</a>
 				</td>
                                 
 			</tr>
