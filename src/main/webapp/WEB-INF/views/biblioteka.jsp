@@ -65,12 +65,13 @@
 			<th><a href="biblioteka?sort=0">Id</a></th>
 			<th><a href="biblioteka?sort=1">Tytul</a></th>
 			<th><a href="biblioteka?sort=2">Opis</a></th>
-			<th><a href="biblioteka?sort=3">imieAutora</a></th>
-                        <th><a href="biblioteka?sort=4">nazwiskoAutora</a></th>
-                        <th><a href="biblioteka?sort=5">pochodzenieAutora</a></th>
+			<th><a href="biblioteka?sort=3">ImieAutora</a></th>
+                        <th><a href="biblioteka?sort=4">NazwiskoAutora</a></th>
+                        <th><a href="biblioteka?sort=5">PochodzenieAutora</a></th>
 			<th><a href="biblioteka?sort=6">Ilosc</a></th>
 			<th><a href="biblioteka?sort=7">Kategoria</a></th>
-			<th>Usu&#324;</th>
+			
+                        <th>Usu&#324;</th>
 			<th>Zmie&#324;</th>
                       </tr>
                 
