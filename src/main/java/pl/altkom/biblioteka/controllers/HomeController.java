@@ -1,4 +1,4 @@
-package pl.altkom.magazyn;
+package pl.altkom.biblioteka.controllers;
 
 import java.text.DateFormat;
 import java.util.Date;

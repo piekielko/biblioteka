@@ -24,11 +24,11 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
-	<context:component-scan base-package="pl.altkom.magazyn" />
+	<context:component-scan base-package="pl.altkom.biblioteka" />
 
 	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver" />
-		<beans:property name="url" value="jdbc:derby://localhost:1527/magazyn;create=true;user=app;password=app" />
+		<beans:property name="url" value="jdbc:derby://localhost:1527/biblioteka;create=true;user=app;password=app" />
 		<beans:property name="username" value="app" />
 		<beans:property name="password" value="app" />
 	</beans:bean>

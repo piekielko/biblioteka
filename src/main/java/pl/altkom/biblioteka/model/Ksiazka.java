@@ -1,30 +1,33 @@
-package pl.altkom.magazyn.model;
+package pl.altkom.biblioteka.model;
 
 import java.io.Serializable;
 import java.util.Comparator;
 
-public class Ksiazki implements Serializable, Comparable {
+public class Ksiazka implements Serializable, Comparable {
 
     private long id;
     private String tytul;
     private String opis;
-    private String autorzy;
+    private String imieAutora;
+    private String nazwiskoAutora;
+    private String pochodzenieAutora;
     private int ilosc;
     private String kategoria;
 
-    public Ksiazki(long id, String tytul, String opis, String autorzy, int ilosc,
-            String kategoria) {
+    public Ksiazka(long id, String tytul, String opis, String imieAutora, String nazwiskoAutora, String pochodzenieAutora, int ilosc, String kategoria) {
         this.id = id;
         this.tytul = tytul;
         this.opis = opis;
-        this.autorzy = autorzy;
+        this.imieAutora = imieAutora;
+        this.nazwiskoAutora = nazwiskoAutora;
+        this.pochodzenieAutora = pochodzenieAutora;
         this.ilosc = ilosc;
         this.kategoria = kategoria;
     }
 
-    public Ksiazki() {
+    public Ksiazka() {
     }
-
+    
     public long getId() {
         return id;
     }
@@ -49,12 +52,28 @@ public class Ksiazki implements Serializable, Comparable {
         this.opis = opis;
     }
 
-    public String getAutorzy() {
-        return autorzy;
+    public String getImieAutora() {
+        return imieAutora;
     }
 
-    public void setAutorzy(String autorzy) {
-        this.autorzy = autorzy;
+    public void setImieAutora(String imieAutora) {
+        this.imieAutora = imieAutora;
+    }
+
+    public String getNazwiskoAutora() {
+        return nazwiskoAutora;
+    }
+
+    public void setNazwiskoAutora(String nazwiskoAutora) {
+        this.nazwiskoAutora = nazwiskoAutora;
+    }
+
+    public String getPochodzenieAutora() {
+        return pochodzenieAutora;
+    }
+
+    public void setPochodzenieAutora(String pochodzenieAutora) {
+        this.pochodzenieAutora = pochodzenieAutora;
     }
 
     public int getIlosc() {
@@ -72,6 +91,8 @@ public class Ksiazki implements Serializable, Comparable {
     public void setKategoria(String kategoria) {
         this.kategoria = kategoria;
     }
+
+   
 
     @Override
     public int compareTo(Object o) {

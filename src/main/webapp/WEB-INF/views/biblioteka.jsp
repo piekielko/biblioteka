@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="${pageContext.request.contextPath}/resources/style.magazyn.css" rel="stylesheet" type="text/css"/>
+<link href="${pageContext.request.contextPath}/resources/style.biblioteka.css" rel="stylesheet" type="text/css"/>
 <title>Insert title here</title>
 <style>
  

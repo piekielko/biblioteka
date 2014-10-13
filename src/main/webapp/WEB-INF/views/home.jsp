@@ -21,8 +21,8 @@
     <div id="section1"
         <ul>
 		<li>
-			<a href="<c:url value="/magazyn" />" >Magazyn</a>
-                        <button type="<c:url value="/magazyn" />">Magazyn</button>
+			<a href="<c:url value="/biblioteka" />" >Biblioteka</a>
+                        <button type="<c:url value="/biblioteka" />">Biblioteka</button>
 		</li>
                 
         </ul>

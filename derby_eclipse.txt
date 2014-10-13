@@ -24,11 +24,13 @@ CREATE TABLE towary (
   kategoria   VARCHAR(255)
 );
 
-CREATE TABLE towary (
+CREATE TABLE ksiazki (
   id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 0, INCREMENT BY 1),
-  nazwa        VARCHAR(255),
+  tytul        VARCHAR(255),
   opis    	VARCHAR(255),
-  cena	     DECIMAL(10, 2),
+  imieAutora    VARCHAR(255),
+  nazwiskoAutora VARCHAR(255),
+  pochodzenieAutora VARCHAR(255),
   ilosc        INT,
   kategoria   VARCHAR(255)
 );

@@ -3,12 +3,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="${pageContext.request.contextPath}/resources/style.magazynzmien.css" rel="stylesheet" type="text/css"/>
+<link href="${pageContext.request.contextPath}/resources/style.bibliotekazmien.css" rel="stylesheet" type="text/css"/>
 <title>Insert title here</title>
 </head>
 <body>
 
-	<form:form modelAttribute="towar">
+	<form:form modelAttribute="ksiazka">
 		Nazwa: <form:input path="nazwa" />
 		<br>
 		Opis: <form:input path="opis" />

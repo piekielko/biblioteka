@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="pl.altkom.magazyn">
+	<logger name="pl.altkom.ksiaz">
 		<level value="info" />
 	</logger>
 	
