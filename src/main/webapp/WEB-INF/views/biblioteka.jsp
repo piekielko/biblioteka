@@ -17,6 +17,7 @@
 	<form:form modelAttribute="ksiazka">
             <div id="okienka-tr">
             <tr>
+                
 		<form:input path="tytul" name="tytul" placeholder="Tytul" />
 		<br>
 		<form:input path="opis" name="opis" placeholder="Opis" />
@@ -56,7 +57,7 @@
     
     
     <div id="tabela">
-                <table style="width: 100%">
+               <table style="width: 100%">
                       
                       <tr>
                       
