@@ -13,11 +13,12 @@ and open the template in the editor.
         
     }
     
-    #okienka-tr{
-            padding:10px;
+    #tabela4{
+            padding:15px;
             margin:100px;
             width:200px; 
             height:100px;
+            font-variant: small-caps;
         
     }
     

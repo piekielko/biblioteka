@@ -8,17 +8,23 @@
         
 </head>
 <body>
-    <div id="header">
+    <div id="section1">
         <h1>
-	Hello world!  
+	 BIBLIOTEKA MIEJSKA W PASIKUROWICACH
         </h1>
     </div>
+
+    <div id="section2">
+        <p>ul. Lipowa 8</p>
+        <p>56-200 Pasikurowice</p>
+    </div>
     
-    <div id="section">
+    
+    <div id="section3">
         <P>  The time on the server is ${serverTime}. </P>
     </div>
     
-    <div id="section1"
+    <div id="section4"
         <ul>
 		<li>
 			<a href="<c:url value="/biblioteka" />" >Biblioteka</a>

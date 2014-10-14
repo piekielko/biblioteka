@@ -15,22 +15,23 @@
     
     <div id="okienka">
 	<form:form modelAttribute="ksiazka">
-            <div id="okienka-tr">
+            <div id="tabela4">
+                
             <tr>
                 
-		<form:input path="tytul" name="tytul" placeholder="Tytul" />
+		<form:input path="tytul" name="tytul" placeholder="Tytul" requirde="true" />
 		<br>
-		<form:input path="opis" name="opis" placeholder="Opis" />
+		<form:input path="opis" name="opis" placeholder="Opis" required="true"/>
 		<br>
-                <form:input path="imieAutora" name="imieAutora" placeholder="ImieAutora" />
+                <form:input path="imieAutora" name="imieAutora" placeholder="ImieAutora" required="true" />
                 <br>
-		<form:input path="nazwiskoAutora" name="nazwiskoAutora" placeholder="NazwiskoAutora"/>
+		<form:input path="nazwiskoAutora" name="nazwiskoAutora" placeholder="NazwiskoAutora" required="true"/>
 		<br>
-                <form:input path="pochodzenieAutora" name="pochodzenieAutora" placeholder="PochodzenieAutora" />
+                <form:input path="pochodzenieAutora" name="pochodzenieAutora" placeholder="PochodzenieAutora" required="true"/>
                 <br>
-		<form:input path="ilosc" name="ilosc" placeholder="Ilosc" />
+		<form:input path="ilosc" name="ilosc" placeholder="Ilosc" type="number"/>
 		<br>
-		<form:input path="kategoria" name="kategoria" placeholder="Kategoria" />
+		<form:input path="kategoria" name="kategoria" placeholder="Kategoria" required="true"/>
 		<br>
              </tr>
              
